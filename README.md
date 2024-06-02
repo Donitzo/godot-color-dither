@@ -8,6 +8,10 @@ Multicolored dithering shaders for Godot 4. The shaders work by replacing the co
 
 The dithering algorithms used in color selection for the dither palette images are based on code and algorithms by Joel Yliluoma. You can read more about his algorithms in this article: [Joel Yliluoma's arbitrary-palette positional dithering algorithm](https://bisqwit.iki.fi/story/howto/dither/jy/).
 
+## Demo
+
+The [demo project](https://donitz.itch.io/godot-color-dither) is hosted on Itch.io.
+
 ## Instructions
 
 A sample project is available in the `src` directory. Import this project into Godot 4 to test the shaders. To use the color dither shaders in your project, you will need to include the shader files located at `src/color_dither/shaders`. Assign the appropriate shader variant to your node’s material, then select a dither palette image for the material.

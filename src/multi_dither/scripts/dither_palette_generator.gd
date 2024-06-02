@@ -9,6 +9,7 @@
     License: Public domain, derived from code by Joel Yliluoma
 """
 
+@tool
 extends Node
 
 @export var palette_image:Image

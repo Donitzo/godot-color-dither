@@ -1,5 +1,5 @@
 """
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: dither_palette_generator.gd
     Description:
         Generates a dither palette for the color dither shaders.

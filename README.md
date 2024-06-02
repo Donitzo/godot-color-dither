@@ -4,15 +4,35 @@
 
 ## Description
 
-Multicolored dithering shaders for Godot 4. These shaders replace the colors on the screen with dithering patterns of one or more indexed colors taken from a `dither palette` image.
+Multicolored dithering shaders for Godot 4. The shaders work by replacing the colors of 2D nodes, 3D nodes or the entire screen with pre-planned dithering patterns of one or more colors taken from a `dither palette` image. The resulting dither mix roughly approximates the original color.
+
+The dithering algorithms used in color selection for the dither palette images are based on code and algorithms by Joel Yliluoma. You can read more about his algorithms in this article: [Joel Yliluoma's arbitrary-palette positional dithering algorithm](https://bisqwit.iki.fi/story/howto/dither/jy/).
+
+## Instructions
+
+A sample project is available in the `src` directory. Import this project into Godot 4 to test the shaders. For using the color dither shaders in your project, you will need the shader files located at src/color_dither/shaders. Assign the appropriate shader variant to your node's material and select or create a `Dither Palette` image.
+
+## Locality and transparency
+
+There are two types of shaders: Postprocessors and regular shaders. 
+
+- The postprocessors operate in screen space, meaning that the color dither will appear to be *fixed* in world space. Sprites moving will have the dither scroll across them. 
+- The regular shaders operate in local space, meaning that the dither will follow the sprite/mesh. This causees less flickering, but may be undesirable for transparency. 
+
+To accomodate the case where you want to both have fixed and non-fixed dithering, you should use regular shaders, and instead offset the dither using the uniforms called `pixel_offset` and `alpha_pixel_offset`. See the `tweener.gd` script for a sample how to use these parameters to make the dither static in the world.
 
 ## Dither palette
 
-The dither palette images are generated with the `dither_palette_generator.gd` editor script. These images act as look-up tables for dithering color mixes. This is done by converting the original color into a UV coordinate on the dither palette image. Red translates to one of 16 columns, where each column contains 16x16xN pixels, where N is the number mixing colors. A dither value points to which row to use, and the blue and green color components points to pixel in the 16x16 tile.
+Dither palette images serve as lookup tables for color mixes, translating the original color into a UV coordinate on the image. The red component selects one of 16 columns, each containing pixels arranged in a 16x16xN grid, where N represents the number of mixing colors. A dither value selects the row, and blue and green components select a pixel within the 16x16 tile.
+
+To create your own `Dither Palette`, you can use the `dither_palette_generator.gd` editor script. Assign it to the scene, and assign an `Palette Image` containing the original colors in the inspector, and the `Dither Color Count` with the number of colors to mix together approximate the original color. Using 1 color would make the dithering shader a simple color replacement shader. For dithering, 2 to 4 colors seem appropriate.
 
 The following is an example of a four color dither palette [CGA Palette 0](https://lospec.com/palette-list/cga-palette-0-high):
 
 ![Sample](https://github.com/Donitzo/godot-color-dither/blob/main/src/color_dither/textures/palettes/cga-palette-0-high.png)
+([source](https://lospec.com/palette-list/cga-palette-0-high))
+
+Other palettes included are [Commodore 64](https://lospec.com/palette-list/commodore64), [CGA](https://lospec.com/palette-list/color-graphics-adapter), [1bit Monitor Glow](https://lospec.com/palette-list/1bit-monitor-glow), [Sweetie 16](https://lospec.com/palette-list/sweetie-16)
 
 The dithering algorithms used in color selection for the dither palette images are based on code and algorithms by Joel Yliluoma. A dithering pattern with over 2 colors uses the gamma-corrected algorithm, while an alternative algorithm is used for dithering patterns with 2 colors.
 

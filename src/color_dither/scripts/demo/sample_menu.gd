@@ -1,5 +1,5 @@
 """
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: sample_menu.gd
     Description: Manages the demo scene.
     Repository: https://github.com/Donitzo/godot-color-dither
@@ -21,11 +21,11 @@ extends Node
 ]
 
 @onready var _dither_palettes:Array = [
-    preload('res://multi_dither/textures/palettes/commodore64.png'),
-    preload('res://multi_dither/textures/palettes/color-graphics-adapter.png'),
-    preload('res://multi_dither/textures/palettes/cga-palette-0-high.png'),
-    preload('res://multi_dither/textures/palettes/sweetie-16.png'),
-    preload('res://multi_dither/textures/palettes/1bit-monitor-glow.png'),
+    preload('res://color_dither/textures/palettes/commodore64.png'),
+    preload('res://color_dither/textures/palettes/color-graphics-adapter.png'),
+    preload('res://color_dither/textures/palettes/cga-palette-0-high.png'),
+    preload('res://color_dither/textures/palettes/sweetie-16.png'),
+    preload('res://color_dither/textures/palettes/1bit-monitor-glow.png'),
 ]
 
 var _materials:Array = []

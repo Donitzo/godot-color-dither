@@ -1,5 +1,5 @@
 /*
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: color_dither_2d.gdshader
     Description: A color dither shader with the following properties:
         Used as a regular canvas_item material for Sprites and TextureRect.

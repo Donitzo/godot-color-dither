@@ -1,5 +1,5 @@
 """
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: spinner.gd
     Description: Spins a 3D node.
     Repository: https://github.com/Donitzo/godot-color-dither

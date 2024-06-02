@@ -1,5 +1,5 @@
 /*
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: color_dither_3d.gdshader
     Description: A color dither shader with the following properties:
         Used as a regular spatial material for 3D meshes.

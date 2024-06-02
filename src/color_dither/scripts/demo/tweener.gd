@@ -1,5 +1,5 @@
 """
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: tweener.gd
     Description: Left/right motion tweener.
     Repository: https://github.com/Donitzo/godot-color-dither

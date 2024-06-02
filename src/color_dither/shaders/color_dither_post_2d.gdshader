@@ -1,5 +1,5 @@
 /*
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: color_dither_post_2d.gdshader
     Description: A color dither shader with the following properties:
         Used in 2D postprocessing.

@@ -1,5 +1,5 @@
 /*
-    Asset: Godot Multi Dither
+    Asset: Godot Color Dither
     File: color_dither_include.gdshader
     Description: Common includes for color dither shaders.
     Repository: https://github.com/Donitzo/godot-color-dither

@@ -6,7 +6,7 @@
         The mixing planner is based on algorithms and code by Joel Yliluoma:
             http://bisqwit.iki.fi/story/howto/dither/jy/
     Repository: https://github.com/Donitzo/godot-color-dither
-    License: Public domain, derived from code by Joel Yliluoma
+    License: Derived from code by Joel Yliluoma. All code is provided as-is, without warranty. #include <GPL/warranty.txt>. 
 """
 
 @tool

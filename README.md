@@ -10,27 +10,26 @@ The dithering algorithms used in color selection for the dither palette images a
 
 ## Instructions
 
-A sample project is available in the `src` directory. Import this project into Godot 4 to test the shaders. For using the color dither shaders in your project, you will need the shader files located at src/color_dither/shaders. Assign the appropriate shader variant to your node's material and select or create a `Dither Palette` image.
+A sample project is available in the `src` directory. Import this project into Godot 4 to test the shaders. To use the color dither shaders in your project, you will need to include the shader files located at `src/color_dither/shaders`. Assign the appropriate shader variant to your node’s material, then select a dither palette image for the material.
 
 ## Locality and transparency
 
 There are two types of shaders: Postprocessors and regular shaders. 
 
 - The postprocessors operate in screen space, meaning that the color dither will appear to be *fixed* in world space. Sprites moving will have the dither scroll across them. 
-- The regular shaders operate in local space, meaning that the dither will follow the sprite/mesh. This causees less flickering, but may be undesirable for transparency. 
+- The regular shaders operate in local space, meaning that the dither will follow the sprite/mesh. This causes less flickering, but may be undesirable for transparency. 
 
-To accomodate the case where you want to both have fixed and non-fixed dithering, you should use regular shaders, and instead offset the dither using the uniforms called `pixel_offset` and `alpha_pixel_offset`. See the `tweener.gd` script for a sample how to use these parameters to make the dither static in the world.
+To accommodate the case where you want to both have fixed and non-fixed dithering, you should use regular shaders, and instead offset the dither using the uniforms called `pixel_offset` and `alpha_pixel_offset`. These uniforms simply offset the dither in local space. See the `tweener.gd` script for a sample how to use these parameters to make the dither static in the world.
 
 ## Dither palette
 
 Dither palette images serve as lookup tables for color mixes, translating the original color into a UV coordinate on the image. The red component selects one of 16 columns, each containing pixels arranged in a 16x16xN grid, where N represents the number of mixing colors. A dither value selects the row, and blue and green components select a pixel within the 16x16 tile.
 
-To create your own `Dither Palette`, you can use the `dither_palette_generator.gd` editor script. Assign it to the scene, and assign an `Palette Image` containing the original colors in the inspector, and the `Dither Color Count` with the number of colors to mix together approximate the original color. Using 1 color would make the dithering shader a simple color replacement shader. For dithering, 2 to 4 colors seem appropriate.
+To create your own dither palette, you can use the `dither_palette_generator.gd` editor script. Assign it to the scene, and assign a `Palette Image` containing the original colors in the inspector, and the `Dither Color Count` with the number of colors to mix together approximate the original color. Using 1 color would make the dithering shader a simple color replacement shader. For dithering, 2 to 4 colors seem appropriate.
 
 The following is an example of a four color dither palette [CGA Palette 0](https://lospec.com/palette-list/cga-palette-0-high):
 
 ![Sample](https://github.com/Donitzo/godot-color-dither/blob/main/src/color_dither/textures/palettes/cga-palette-0-high.png)
-([source](https://lospec.com/palette-list/cga-palette-0-high))
 
 Other palettes included are [Commodore 64](https://lospec.com/palette-list/commodore64), [CGA](https://lospec.com/palette-list/color-graphics-adapter), [1bit Monitor Glow](https://lospec.com/palette-list/1bit-monitor-glow), [Sweetie 16](https://lospec.com/palette-list/sweetie-16)
 
@@ -42,10 +41,10 @@ The shaders work best at low resolutions or low-resolution viewports and *does n
 
 There are four shader variations:
 
-- color_dither_2d: Dithering shader for [Sprites](https://docs.godotengine.org/en/3.5/classes/class_sprite.html) and [TextureRect](https://docs.godotengine.org/en/stable/classes/class_texturerect.html). Supports screendoor transparency.
-- color_dither_post_2d: Dithering postprocessing shader for 2D which applies dithering to the entire screen. Does not support screendoor transparency. Easiest way to use is to assign it to a fullscreen [ColorRect](https://docs.godotengine.org/en/stable/classes/class_colorrect.html)
-- color_dither_3d: Dithering shader for 3D nodes such as [MeshInstance3D](https://docs.godotengine.org/en/stable/classes/class_meshinstance3d.html). Supports screendoor transparency.
-- color_dither_post_3d: Dithering postprocessing shader for 3D which applies dithering to the entire screen. Does not support screendoor transparency. Easiest way to use is to assign it to a [MeshInstance3D](https://docs.godotengine.org/en/stable/classes/class_meshinstance3d.html) with a 2x2 [QuadMesh](https://docs.godotengine.org/en/stable/classes/class_quadmesh.html)
+- **color_dither_2d**: Dithering shader for [Sprites](https://docs.godotengine.org/en/3.5/classes/class_sprite.html) and [TextureRect](https://docs.godotengine.org/en/stable/classes/class_texturerect.html). Supports screendoor transparency.
+- **color_dither_post_2d**: Dithering postprocessing shader for 2D which applies dithering to the entire screen. Does not support screendoor transparency. Easiest way to use is to assign it to a fullscreen [ColorRect](https://docs.godotengine.org/en/stable/classes/class_colorrect.html)
+- **color_dither_3d**: Dithering shader for 3D nodes such as [MeshInstance3D](https://docs.godotengine.org/en/stable/classes/class_meshinstance3d.html). Supports screendoor transparency.
+- **color_dither_post_3d**: Dithering postprocessing shader for 3D which applies dithering to the entire screen. Does not support screendoor transparency. Easiest way to use is to assign it to a [MeshInstance3D](https://docs.godotengine.org/en/stable/classes/class_meshinstance3d.html) with a 2x2 [QuadMesh](https://docs.godotengine.org/en/stable/classes/class_quadmesh.html)
 
 ## Feedback & Bug Reports
 

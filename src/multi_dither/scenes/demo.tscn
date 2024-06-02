@@ -1,0 +1,410 @@
+[gd_scene load_steps=27 format=3 uid="uid://ttsfhohplssu"]
+
+[ext_resource type="Script" path="res://multi_dither/scripts/demo/sample_menu.gd" id="1_8gt0x"]
+[ext_resource type="Script" path="res://multi_dither/scripts/dither_palette_generator.gd" id="2_if17f"]
+[ext_resource type="Texture2D" uid="uid://dbswed5xhdu2e" path="res://multi_dither/textures/demo/house.png" id="3_rv4ew"]
+[ext_resource type="Texture2D" uid="uid://jeh7vi11aweu" path="res://multi_dither/textures/demo/cat.png" id="4_fepie"]
+[ext_resource type="Texture2D" uid="uid://cnbq5ow6s0r2y" path="res://multi_dither/textures/demo/guy.png" id="5_bf2bj"]
+[ext_resource type="Script" path="res://multi_dither/scripts/demo/tweener.gd" id="6_yegh8"]
+[ext_resource type="Texture2D" uid="uid://brym6xry3f65x" path="res://multi_dither/textures/demo/cloud.png" id="7_7sdhx"]
+[ext_resource type="Shader" path="res://multi_dither/shaders/color_dither_2d.gdshader" id="8_v10kx"]
+[ext_resource type="Texture2D" uid="uid://dveh6png7nn4x" path="res://multi_dither/textures/palettes/commodore64.png" id="9_fjdmv"]
+[ext_resource type="Shader" path="res://multi_dither/shaders/color_dither_post_2d.gdshader" id="10_jydp3"]
+[ext_resource type="Script" path="res://multi_dither/scripts/demo/spinner.gd" id="11_o6u64"]
+[ext_resource type="Shader" path="res://multi_dither/shaders/color_dither_3d.gdshader" id="12_5j7r7"]
+[ext_resource type="Texture2D" uid="uid://b8n06vtd5fi1m" path="res://multi_dither/textures/demo/rock.png" id="13_3pu8i"]
+[ext_resource type="Shader" path="res://multi_dither/shaders/color_dither_post_3d.gdshader" id="14_b87hu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mobqp"]
+shader = ExtResource("8_v10kx")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
+shader_parameter/dither_palette = ExtResource("9_fjdmv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akvlx"]
+shader = ExtResource("8_v10kx")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
+shader_parameter/dither_palette = ExtResource("9_fjdmv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hdjg"]
+shader = ExtResource("8_v10kx")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 0.5)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
+shader_parameter/dither_palette = ExtResource("9_fjdmv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_42ipi"]
+shader = ExtResource("8_v10kx")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 0.5)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
+shader_parameter/dither_palette = ExtResource("9_fjdmv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sj53t"]
+shader = ExtResource("10_jydp3")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/dither_palette = ExtResource("9_fjdmv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b307t"]
+albedo_color = Color(0.697601, 0, 0.0720924, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ikhx"]
+albedo_color = Color(0, 0.447712, 0.908255, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_otgfm"]
+render_priority = 0
+shader = ExtResource("12_5j7r7")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/dither_palette = ExtResource("9_fjdmv")
+shader_parameter/texture_albedo = ExtResource("13_3pu8i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2ij7"]
+albedo_texture = ExtResource("13_3pu8i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3v2p"]
+albedo_texture = ExtResource("13_3pu8i")
+texture_filter = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cuvrb"]
+render_priority = 0
+shader = ExtResource("14_b87hu")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/dither_palette = ExtResource("9_fjdmv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_88flf"]
+size = Vector2(2, 2)
+
+[node name="Demo" type="Node2D" node_paths=PackedStringArray("samples", "palettes", "color_picker")]
+script = ExtResource("1_8gt0x")
+samples = NodePath("Samples")
+palettes = NodePath("Palettes")
+color_picker = NodePath("ColorPicker")
+
+[node name="DitherPaletteGenerator" type="Node" parent="."]
+script = ExtResource("2_if17f")
+palette_image = ExtResource("3_rv4ew")
+
+[node name="SampleOriginal" type="SubViewportContainer" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 280.0
+offset_bottom = 150.0
+scale = Vector2(4, 4)
+
+[node name="SubViewport" type="SubViewport" parent="SampleOriginal"]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(280, 150)
+render_target_update_mode = 0
+
+[node name="House" type="Sprite2D" parent="SampleOriginal/SubViewport"]
+texture_filter = 1
+texture = ExtResource("3_rv4ew")
+centered = false
+
+[node name="Cat" type="Sprite2D" parent="SampleOriginal/SubViewport"]
+position = Vector2(252, 72)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_fepie")
+
+[node name="Guy" type="Sprite2D" parent="SampleOriginal/SubViewport"]
+texture_filter = 1
+position = Vector2(130, 107)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_bf2bj")
+script = ExtResource("6_yegh8")
+right_move_distance = 90.0
+max_velocity = 40.0
+acceleration = 20.0
+flip = true
+
+[node name="Cloud1" type="Sprite2D" parent="SampleOriginal/SubViewport"]
+texture_filter = 1
+position = Vector2(200, 70)
+texture = ExtResource("7_7sdhx")
+script = ExtResource("6_yegh8")
+left_move_distance = 60.0
+max_velocity = 15.0
+acceleration = 15.0
+world_dither = true
+
+[node name="Cloud2" type="Sprite2D" parent="SampleOriginal/SubViewport"]
+texture_filter = 1
+position = Vector2(90, 60)
+texture = ExtResource("7_7sdhx")
+script = ExtResource("6_yegh8")
+right_move_distance = 50.0
+max_velocity = 15.0
+acceleration = 15.0
+world_dither = true
+
+[node name="Sample2D" type="SubViewportContainer" parent="."]
+texture_filter = 1
+offset_right = 280.0
+offset_bottom = 150.0
+scale = Vector2(4, 4)
+
+[node name="SubViewport" type="SubViewport" parent="Sample2D"]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(280, 150)
+render_target_update_mode = 4
+
+[node name="House" type="Sprite2D" parent="Sample2D/SubViewport"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_mobqp")
+texture = ExtResource("3_rv4ew")
+centered = false
+
+[node name="Cat" type="Sprite2D" parent="Sample2D/SubViewport"]
+position = Vector2(252, 72)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_fepie")
+
+[node name="Guy" type="Sprite2D" parent="Sample2D/SubViewport"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_akvlx")
+position = Vector2(130, 107)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_bf2bj")
+script = ExtResource("6_yegh8")
+right_move_distance = 90.0
+max_velocity = 40.0
+acceleration = 20.0
+flip = true
+
+[node name="Cloud1" type="Sprite2D" parent="Sample2D/SubViewport"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_5hdjg")
+position = Vector2(200, 70)
+texture = ExtResource("7_7sdhx")
+script = ExtResource("6_yegh8")
+left_move_distance = 60.0
+max_velocity = 15.0
+acceleration = 15.0
+world_dither = true
+
+[node name="Cloud2" type="Sprite2D" parent="Sample2D/SubViewport"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_42ipi")
+position = Vector2(90, 60)
+texture = ExtResource("7_7sdhx")
+script = ExtResource("6_yegh8")
+right_move_distance = 50.0
+max_velocity = 15.0
+acceleration = 15.0
+world_dither = true
+
+[node name="Sample2DPost" type="SubViewportContainer" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 280.0
+offset_bottom = 150.0
+scale = Vector2(4, 4)
+
+[node name="SubViewport" type="SubViewport" parent="Sample2DPost"]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(280, 150)
+render_target_update_mode = 0
+
+[node name="House" type="Sprite2D" parent="Sample2DPost/SubViewport"]
+texture_filter = 1
+texture = ExtResource("3_rv4ew")
+centered = false
+
+[node name="Cat" type="Sprite2D" parent="Sample2DPost/SubViewport"]
+position = Vector2(252, 72)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_fepie")
+
+[node name="Guy" type="Sprite2D" parent="Sample2DPost/SubViewport"]
+texture_filter = 1
+position = Vector2(130, 107)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_bf2bj")
+script = ExtResource("6_yegh8")
+right_move_distance = 90.0
+max_velocity = 40.0
+acceleration = 20.0
+flip = true
+
+[node name="Cloud1" type="Sprite2D" parent="Sample2DPost/SubViewport"]
+texture_filter = 1
+position = Vector2(200, 70)
+texture = ExtResource("7_7sdhx")
+script = ExtResource("6_yegh8")
+left_move_distance = 60.0
+max_velocity = 15.0
+acceleration = 15.0
+world_dither = true
+
+[node name="Cloud2" type="Sprite2D" parent="Sample2DPost/SubViewport"]
+texture_filter = 1
+position = Vector2(90, 60)
+texture = ExtResource("7_7sdhx")
+script = ExtResource("6_yegh8")
+right_move_distance = 50.0
+max_velocity = 15.0
+acceleration = 15.0
+world_dither = true
+
+[node name="ColorRect" type="ColorRect" parent="Sample2DPost/SubViewport"]
+material = SubResource("ShaderMaterial_sj53t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sample3D" type="SubViewportContainer" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 280.0
+offset_bottom = 150.0
+scale = Vector2(4, 4)
+
+[node name="SubViewport" type="SubViewport" parent="Sample3D"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(280, 150)
+render_target_update_mode = 0
+
+[node name="Ring1" type="CSGTorus3D" parent="Sample3D/SubViewport"]
+inner_radius = 0.572
+outer_radius = 0.715
+sides = 32
+material = SubResource("StandardMaterial3D_b307t")
+script = ExtResource("11_o6u64")
+spin = Vector3(1, 0, 0)
+
+[node name="Ring2" type="CSGTorus3D" parent="Sample3D/SubViewport"]
+inner_radius = 0.978
+outer_radius = 0.874
+sides = 32
+material = SubResource("StandardMaterial3D_8ikhx")
+script = ExtResource("11_o6u64")
+spin = Vector3(0, 0, 1)
+
+[node name="Box" type="CSGBox3D" parent="Sample3D/SubViewport"]
+size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("ShaderMaterial_otgfm")
+script = ExtResource("11_o6u64")
+spin = Vector3(0.2, 0.2, 0.2)
+
+[node name="Camera3D" type="Camera3D" parent="Sample3D/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.946023, 0.324099, 0, -0.324099, 0.946023, 0, 0.489397, 1.4391)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sample3D/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17087, 0.433545)
+shadow_enabled = true
+
+[node name="Sample3DPost" type="SubViewportContainer" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 280.0
+offset_bottom = 150.0
+scale = Vector2(4, 4)
+
+[node name="SubViewport" type="SubViewport" parent="Sample3DPost"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(280, 150)
+render_target_update_mode = 0
+
+[node name="Ring1" type="CSGTorus3D" parent="Sample3DPost/SubViewport"]
+inner_radius = 0.572
+outer_radius = 0.715
+sides = 32
+material = SubResource("StandardMaterial3D_b307t")
+script = ExtResource("11_o6u64")
+spin = Vector3(1, 0, 0)
+
+[node name="Ring2" type="CSGTorus3D" parent="Sample3DPost/SubViewport"]
+inner_radius = 0.978
+outer_radius = 0.874
+sides = 32
+material = SubResource("StandardMaterial3D_8ikhx")
+script = ExtResource("11_o6u64")
+spin = Vector3(0, 0, 1)
+
+[node name="Box" type="CSGBox3D" parent="Sample3DPost/SubViewport"]
+material_override = SubResource("StandardMaterial3D_v2ij7")
+size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_x3v2p")
+script = ExtResource("11_o6u64")
+spin = Vector3(0.2, 0.2, 0.2)
+
+[node name="Camera3D" type="Camera3D" parent="Sample3DPost/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.946023, 0.324099, 0, -0.324099, 0.946023, 0, 0.489397, 1.4391)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sample3DPost/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17087, 0.433545)
+shadow_enabled = true
+
+[node name="Postprocessor" type="MeshInstance3D" parent="Sample3DPost/SubViewport"]
+material_override = SubResource("ShaderMaterial_cuvrb")
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_88flf")
+
+[node name="Palettes" type="ItemList" parent="."]
+offset_left = 808.0
+offset_top = 8.0
+offset_right = 968.0
+offset_bottom = 152.0
+allow_search = false
+item_count = 5
+item_0/text = "C64"
+item_1/text = "CGA"
+item_2/text = "CGA PALETTE 0"
+item_3/text = "Sweetie 16"
+item_4/text = "Black & White"
+
+[node name="Samples" type="ItemList" parent="."]
+offset_left = 624.0
+offset_top = 8.0
+offset_right = 808.0
+offset_bottom = 152.0
+allow_search = false
+item_count = 5
+item_0/text = "Original"
+item_1/text = "2D"
+item_2/text = "2D Postprocessor"
+item_3/text = "3D"
+item_4/text = "3D Postprocessor"
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+offset_left = 968.0
+offset_top = 8.0
+offset_right = 1266.0
+offset_bottom = 296.0
+scale = Vector2(0.5, 0.5)
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false

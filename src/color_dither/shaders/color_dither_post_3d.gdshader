@@ -10,7 +10,7 @@
 */
 
 shader_type spatial;
-render_mode unshaded, cull_front;
+render_mode shadows_disabled, depth_test_disabled, unshaded, cull_front;
 
 #define IS_POSTPROCESSOR
 

@@ -6,7 +6,7 @@
 
 This project contains a set of multicolored dithering shaders for Godot 4. The shaders work by replacing the colors of 2D nodes, 3D nodes or the entire screen in the case of postprocessing. The colors are replaced with a pre-planned dithering pattern of one or more colors taken from a "dither palette" image. The resulting dither mix roughly approximates the original color, giving the scene an old-school retro look.
 
-The dithering algorithms used in color selection for the dither palette images is derived from code and algorithms by Joel Yliluoma. You can read more about his algorithms in this article: [Joel Yliluoma's arbitrary-palette positional dithering algorithm](https://bisqwit.iki.fi/story/howto/dither/jy/). A dithering pattern with over 2 colors uses the gamma-corrected algorithm, while an alternative algorithm is used for dithering patterns with 2 colors.
+The dithering algorithms used in color selection for the dither palette images is derived from code and algorithms by Joel Yliluoma. You can read more about his algorithms in this article: [Joel Yliluoma's arbitrary-palette positional dithering algorithm](https://bisqwit.iki.fi/story/howto/dither/jy/). A dithering pattern with over 2 colors uses the gamma-corrected algorithm 3, while algorithm 2 is used for dithering patterns with 2 colors.
 
 ## Demo
 

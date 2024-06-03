@@ -14,7 +14,7 @@ The [demo project](https://donitz.itch.io/godot-color-dither) is hosted on Itch.
 
 ## Instructions
 
-The demo project is available in the `src` directory. Import this project into Godot 4 to test the shaders. To use the color dither shaders in your project, you will need to include the shader files located at `src/color_dither/shaders`. Assign the appropriate shader variant to your node’s material, then select a dither palette image for the material. There are some additional uniforms used in dither placement (See the next section).
+The demo project is available in the `src` directory. Import the project into Godot 4 to test the shaders. To use the color dither shaders in your project, you will need to include the shader files located at `src/color_dither/shaders`. Assign the appropriate shader variant to your node’s material, then select a dither palette image for the material. There are some additional uniforms used in dither placement (See the next section).
 
 ## Locality and transparency
 

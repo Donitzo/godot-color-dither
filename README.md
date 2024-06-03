@@ -37,7 +37,7 @@ The following is an example of a four color mix (rows) dither palette [CGA Palet
 
 ![Sample](https://github.com/Donitzo/godot-color-dither/blob/main/src/color_dither/textures/palettes/cga-palette-0-high.png)
 
-Other palettes included are [Commodore 64](https://lospec.com/palette-list/commodore64), [CGA](https://lospec.com/palette-list/color-graphics-adapter), [1bit Monitor Glow](https://lospec.com/palette-list/1bit-monitor-glow), [Sweetie 16](https://lospec.com/palette-list/sweetie-16).
+Other palettes included are [Steam Lords](https://lospec.com/palette-list/steam-lords), [CGA](https://lospec.com/palette-list/color-graphics-adapter), [1bit Monitor Glow](https://lospec.com/palette-list/1bit-monitor-glow), [Sweetie 16](https://lospec.com/palette-list/sweetie-16).
 
 The dithering algorithms used in color selection for the dither palette images are based on code and algorithms by Joel Yliluoma. A dithering pattern with over 2 colors uses the gamma-corrected algorithm, while an alternative algorithm is used for dithering patterns with 2 colors.
 

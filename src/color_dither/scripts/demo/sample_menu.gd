@@ -21,7 +21,7 @@ extends Node
 ]
 
 @onready var _dither_palettes:Array = [
-    preload('res://color_dither/textures/palettes/commodore64.png'),
+    preload('res://color_dither/textures/palettes/steam-lords.png'),
     preload('res://color_dither/textures/palettes/color-graphics-adapter.png'),
     preload('res://color_dither/textures/palettes/cga-palette-0-high.png'),
     preload('res://color_dither/textures/palettes/sweetie-16.png'),

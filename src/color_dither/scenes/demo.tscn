@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://color_dither/scripts/demo/tweener.gd" id="6_yegh8"]
 [ext_resource type="Texture2D" uid="uid://brym6xry3f65x" path="res://color_dither/textures/demo/cloud.png" id="7_7sdhx"]
 [ext_resource type="Shader" path="res://color_dither/shaders/color_dither_2d.gdshader" id="8_v10kx"]
-[ext_resource type="Texture2D" uid="uid://dveh6png7nn4x" path="res://color_dither/textures/palettes/commodore64.png" id="9_fjdmv"]
+[ext_resource type="Texture2D" uid="uid://dveh6png7nn4x" path="res://color_dither/textures/palettes/steam-lords.png" id="9_fjdmv"]
 [ext_resource type="Shader" path="res://color_dither/shaders/color_dither_post_2d.gdshader" id="10_jydp3"]
 [ext_resource type="Script" path="res://color_dither/scripts/demo/spinner.gd" id="11_o6u64"]
 [ext_resource type="Shader" path="res://color_dither/shaders/color_dither_3d.gdshader" id="12_5j7r7"]

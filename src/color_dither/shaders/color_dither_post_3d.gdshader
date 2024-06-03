@@ -21,8 +21,10 @@ void vertex() {
 }
 
 void fragment() {
-    vec4 color = get_albedo(SCREEN_UV);
-    vec2 pixel = get_pixel_center(SCREEN_UV);
+    // screen_texture access inlined due to bug in shader compiler in Godot 4.2.2
+    vec4 color = texture(screen_texture, SCREEN_UV) * vec4(albedo.rgb * albedo_strength, 1.0);
+    vec2 pixel = floor(SCREEN_UV * vec2(textureSize(screen_texture, 0)) / dither_pixel_size + dither_pixel_offset) + 0.5;
+
     float dither_value = get_dither_value(pixel);
     ALBEDO = get_dither_color(dither_value, color).rgb;
 }

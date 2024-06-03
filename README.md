@@ -6,7 +6,7 @@
 
 This project contains a set of multicolored dithering shaders for Godot 4. The shaders work by replacing the colors of 2D nodes, 3D nodes or the entire screen in the case of postprocessing. The colors are replaced with a pre-planned dithering pattern of one or more colors taken from a "dither palette" image. The resulting dither mix roughly approximates the original color, giving the scene an old-school retro look.
 
-The dithering algorithms used in color selection for the dither palette images are based on code and algorithms by Joel Yliluoma. You can read more about his algorithms in this article: [Joel Yliluoma's arbitrary-palette positional dithering algorithm](https://bisqwit.iki.fi/story/howto/dither/jy/).
+The dithering algorithms used in color selection for the dither palette images is derived from code and algorithms by Joel Yliluoma. You can read more about his algorithms in this article: [Joel Yliluoma's arbitrary-palette positional dithering algorithm](https://bisqwit.iki.fi/story/howto/dither/jy/). A dithering pattern with over 2 colors uses the gamma-corrected algorithm, while an alternative algorithm is used for dithering patterns with 2 colors.
 
 ## Demo
 
@@ -38,8 +38,6 @@ The following is an example of a four color mix (rows) dither palette [CGA Palet
 ![Sample](https://github.com/Donitzo/godot-color-dither/blob/main/src/color_dither/textures/palettes/cga-palette-0-high.png)
 
 Other palettes included are [Steam Lords](https://lospec.com/palette-list/steam-lords), [CGA](https://lospec.com/palette-list/color-graphics-adapter), [1bit Monitor Glow](https://lospec.com/palette-list/1bit-monitor-glow), [Sweetie 16](https://lospec.com/palette-list/sweetie-16).
-
-The dithering algorithms used in color selection for the dither palette images are based on code and algorithms by Joel Yliluoma. A dithering pattern with over 2 colors uses the gamma-corrected algorithm, while an alternative algorithm is used for dithering patterns with 2 colors.
 
 The shaders work best at low resolutions or low-resolution viewports and *does not inherently pixelize* the screen. There is a `pixel_size` uniform in the shaders, but it should only be used when the actual sprite art has scaled pixels.
 

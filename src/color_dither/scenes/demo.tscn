@@ -382,7 +382,7 @@ item_0/text = "Steam Lords"
 item_1/text = "CGA"
 item_2/text = "CGA PALETTE 0"
 item_3/text = "Sweetie 16"
-item_4/text = "Black & White"
+item_4/text = "1bit Monitor Glow"
 
 [node name="Samples" type="ItemList" parent="."]
 offset_left = 624.0

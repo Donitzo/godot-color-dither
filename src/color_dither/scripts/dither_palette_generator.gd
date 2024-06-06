@@ -3,10 +3,31 @@
     File: dither_palette_generator.gd
     Description:
         Generates a dither palette for the color dither shaders.
-        The mixing planner is based on algorithms and code by Joel Yliluoma:
+        The mixing planner is derived from algorithms and code by Joel Yliluoma:
             http://bisqwit.iki.fi/story/howto/dither/jy/
     Repository: https://github.com/Donitzo/godot-color-dither
-    Attribution: Derived from code by Joel Yliluoma. All code is provided as-is, without warranty. #include <GPL/warranty.txt>. 
+    License:
+MIT License
+
+Copyright (c) 2024 Donitzo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
 
 @tool

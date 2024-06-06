@@ -8,7 +8,7 @@ This project contains a set of multicolored dithering shaders for Godot 4. The s
 
 The dithering algorithms used in color selection for the dither palette images is derived from code and algorithms by Joel Yliluoma. You can read more about his algorithms in this article: [Joel Yliluoma's arbitrary-palette positional dithering algorithm](https://bisqwit.iki.fi/story/howto/dither/jy/). A dithering pattern with over 2 colors uses the gamma-corrected algorithm 3, while algorithm 2 is used for dithering patterns with 2 colors.
 
-## License
+## Licenses
 
 The `dither_palette_generator.gd` script is licensed under the [MIT license](https://opensource.org/license/mit) (since much of the code is derived from the original article, that seems like a more respectful choice). All other files in the project are licensed under [CC0](https://creativecommons.org/public-domain/cc0/).
 

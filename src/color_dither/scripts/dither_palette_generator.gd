@@ -6,7 +6,7 @@
         The mixing planner is derived from algorithms and code by Joel Yliluoma:
             http://bisqwit.iki.fi/story/howto/dither/jy/
     Repository: https://github.com/Donitzo/godot-color-dither
-    Attribution: Original algorithm by Joel Yliluoma
+    Attribution: http://bisqwit.iki.fi/story/howto/dither/jy/
     License:
 MIT License
 

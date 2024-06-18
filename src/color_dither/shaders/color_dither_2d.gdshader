@@ -11,8 +11,6 @@
 shader_type canvas_item;
 render_mode unshaded;
 
-#define IS_CANVAS_ITEM
-
 #include "./color_dither_include.gdshaderinc"
 
 // Pixel offset used only for alpha dithering
